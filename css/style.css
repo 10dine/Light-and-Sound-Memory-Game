@@ -1,4 +1,155 @@
-*{
-    background-color: rgb(134, 221, 221);
-
+{
+    
+}
+body{
+    background-color: rgb(171, 242, 218);
+}
+.container_a{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.placeholder_2 h1{
+    font-family: Arial;
+    font: 5rem;
+    opacity: 0%;
+}
+.buttons{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-grow: 1;
+    align-items: center;
+}
+#row{
+    display: flex;
+    flex-direction: row;
+}
+#play_buttons{
+    display: flex;
+    flex-direction: row;
+}
+#play_buttons button{
+    width: 12em;
+    height: 12em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    border-radius: 10em;
+    margin: 1em;
+}
+#column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#start_button{
+    transition: 1s;
+    width: 5em;
+    height: 5em;
+    border-radius: 5em;
+    border: 5em;
+    margin: 2em;
+    background-color: rgb(237, 16, 16);
+    opacity: 50%;
+}
+#start_button:hover{
+    transition: 0.2s;
+    opacity: 70%;
+}
+#start_button:active{
+    transition: 0.2s;
+    opacity: 100%;
+}
+#stop_button{
+    transition: 1s;
+    width: 5em;
+    height: 5em;
+    border-radius: 1em;
+    border: 3em;
+    margin: 2em;
+    background-color: rgb(167, 167, 167);
+    opacity: 50%;
+}
+#stop_button:hover{
+    opacity: 70%;
+}
+#stop_button:active{
+    opacity: 100%;
+}
+#rd_button{
+    transition: 0.5s;
+    background-color: rgb(201, 53, 53);
+    border: 30em;
+    border-radius: 10em;
+    opacity: 50%;
+}
+#rd_button:hover{
+    opacity: 70%;
+}
+#rd_button:active{
+    transition: 0.2s;
+    opacity: 100%;
+}
+#bl_button{
+    transition: 0.5s;
+    background-color: rgb(65, 65, 189);
+    opacity: 50%;
+    border: 30em;
+    border-radius: 10em;
+}
+#bl_button:hover{
+    opacity: 70%;
+}
+#bl_button:active{
+    transition: 0.2s;
+    opacity: 100%;
+}
+#gn_button{
+    transition: 0.5s;
+    opacity: 50%;
+    background-color: green;
+    border: 30em;
+    border-radius: 10em;
+}
+#gn_button:hover{
+    opacity: 70%;
+}
+#gn_button:active{
+    transition: 0.2s;
+    opacity: 100%;
+}
+#yw_button{
+    transition: 0.5s;
+    opacity: 50%;
+    background-color: purple;
+    border: 30em;
+    border-radius: 10em;
+}
+#yw_button:hover{
+    opacity: 70%;
+}
+#yw_button:active{
+    transition: 0.2s;
+    opacity: 100%;
+}
+#m1{
+    font-family: Arial;
+    color: rgb(108, 108, 108);
+}
+#mode{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 2em;
+    font-family: Arial;
+    color: aliceblue;
+    border-radius: ;
+    background-color: rgb(108, 108, 108);
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
