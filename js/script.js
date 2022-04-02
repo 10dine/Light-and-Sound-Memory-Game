@@ -7,6 +7,7 @@ var tonePlaying = false;
 var volume = 0.5;
 var guessCounter;
 var rpl = 0;
+var timer = 10000;
 //Global Constants
 const freqMap = {
     1: 261.6,
@@ -29,27 +30,29 @@ function getRandomInt(max){
   return Math.floor(Math.random() * max);
 }
 //mode pattern function
-function makePattern(mode){
+function makePattern(mode){ //switch function for difficulty
     switch(mode){
-        case "EASY":
-            for (let i = 0; i < 4; i++){
-                pattern[i] = (getRandomInt(4) + 1);
-            }
-            break;
-        case "MEDIUM":
-            for (let i = 0; i < 8; i++){
-                pattern[i] = (getRandomInt(4) + 1);
-            }
-            clueHoldTime = 600;
-            cluePauseTime = 333;
-            break;
-        case "HARD":
-            for (let i = 0; i < 16; i++){
-                pattern[i] = (getRandomInt(4) + 1);
-            }
-          clueHoldTime = 300;
-          cluePauseTime = 111;
-          break;
+      case "EASY": 
+        for (let i = 0; i < 4; i++){
+            pattern[i] = (getRandomInt(4) + 1);
+        }
+        break;
+      case "MEDIUM":
+        for (let i = 0; i < 8; i++){
+            pattern[i] = (getRandomInt(4) + 1);
+        }
+        timer = 7000;
+        clueHoldTime = 600;
+        cluePauseTime = 333;
+        break;
+      case "HARD":
+        for (let i = 0; i < 16; i++){
+            pattern[i] = (getRandomInt(4) + 1);
+        }
+        timer = 3000;
+        clueHoldTime = 300;
+        cluePauseTime = 111;
+        break;
     }
 }
 //light and clear button
@@ -118,11 +121,11 @@ function guess(btn){
     return;
   }
   else{
-    if(progress !== pattern.length){
+    if(progress !== pattern.length){ //if progress is not equal to array length then
       console.log("woroking")
-      if (btn == pattern[progress]){
-        if(progress == rpl){
-          console.log("win");
+      if (btn == pattern[progress]){ //check if btn pressed is in array
+        if(progress == rpl){ //and if progress is equal to array length -1 (because array .length gives total)
+          console.log("win"); //then commence win
           winGame();
         }else{progress++;}
       }
@@ -131,6 +134,23 @@ function guess(btn){
       }
     }
   }
+}
+//timer variables
+var t = 0;
+//timer functions
+function timeClock(time){
+  tInterval1 = setInterval(loseGame, time);
+  tInterval3 = setInterval(tminus, 1000);
+}
+function timerInS(time){
+  t = time/1000;
+}
+function tminus(){
+  document.getElementById("status").textContent = (t+" Seconds left!");
+  t--;
+}
+function timeLoss(){
+
 }
 //Game Start Function
 function startGame(){
