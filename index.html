@@ -9,10 +9,14 @@
     </head>
     <body>
         <div class="container_a">
+            <div id="intro">
+                <h1>LIGHT AND SOUND MEMORY GAME</h1>
+                <h2>Welcome to the game! Repeat the given pattern!</h2>
+            </div>
             <div class="buttons">
                 <div id="row">
                     <div class="start_button">
-                        <button type="button" id="start_button">START</button>
+                        <button type="button" id="start_button" onclick="startGame()">START</button>
                     </div>
                     <div id="column">
                         <h1 for="MODE" id="m1">MODE</h1>
@@ -23,24 +27,24 @@
                         </select>
                     </div>
                     <div class="stop_button">
-                        <button type="button" id="stop_button" disabled>STOP</button>
+                        <button type="button" id="stop_button" onclick="stopGame()" disabled>STOP</button>
                     </div>
                 </div>
                 <div id="row">
                     <div id="play_buttons">
                         <div class="column">
-                            <button type="button" id="rd_button" onmousedown="startTone(1)" onmouseup="stopTone()"></button>
-                            <button type="button" id="bl_button" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
+                            <button type="button" id="rd_button" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"></button>
+                            <button type="button" id="bl_button" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
                         </div>
                         <div class="column">
-                            <button type="button" id="gn_button" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
-                            <button type="button" id="yw_button" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
+                            <button type="button" id="gn_button" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
+                            <button type="button" id="yw_button" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="placeholder_2">
-                <h1></h1>
+                <h1 id="status"></h1>
             </div>
         </div>
     </body>
